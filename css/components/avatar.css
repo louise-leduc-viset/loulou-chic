@@ -1,0 +1,61 @@
+/* ===== AVATAR COMPONENT ===== */
+
+.avatar {
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 0 6px rgba(255, 107, 53, 0.25);
+}
+
+/* Sizes */
+.avatar--sm  { width: 40px;  height: 40px; }
+.avatar--md  { width: 64px;  height: 64px; }
+.avatar--lg  { width: 96px;  height: 96px; }
+.avatar--xl  { width: 128px; height: 128px; }
+
+/* Initials fallback */
+.avatar--initials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-dark);
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 1.1rem;
+}
+
+.avatar-group {
+  display: flex;
+  align-items: center;
+}
+
+.avatar-group .avatar {
+  margin-left: -12px;
+  border: 2px solid var(--color-bg);
+  transition: transform 0.2s ease, z-index 0s;
+}
+
+.avatar-group .avatar:first-child {
+  margin-left: 0;
+}
+
+.avatar-group .avatar:hover {
+  transform: translateY(-4px) scale(1.08);
+  z-index: 10;
+}
