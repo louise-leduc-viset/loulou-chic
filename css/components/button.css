@@ -1,110 +1,87 @@
-/* ===== BUTTON COMPONENT ===== */
-
+/* ── BUTTON ── */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 14px 32px;
-  font-family: var(--font-display);
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border: 2px solid transparent;
-  border-radius: 3px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 30px;
+  font-family: var(--font-body);
+  font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+  white-space: nowrap; position: relative; overflow: hidden;
 }
 
-/* Ripple effect */
+/* Shimmer on hover */
 .btn::after {
   content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.15);
+  position: absolute; inset: 0;
+  background: rgba(255,255,255,0.18);
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s;
 }
 .btn:hover::after { opacity: 1; }
-.btn:active::after { opacity: 0.3; }
+.btn:active::after { opacity: 0.05; }
 
-/* Primary Button */
+/* Primary */
 .btn-primary {
-  background: var(--color-accent);
-  color: #fff;
-  border-color: var(--color-accent);
-  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.35);
+  background: var(--accent); color: #fff; border-color: var(--accent);
+  box-shadow: 0 4px 18px rgba(200,85,106,0.28);
 }
-
 .btn-primary:hover {
-  background: var(--color-accent-dark);
-  border-color: var(--color-accent-dark);
-  box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5);
+  background: var(--accent-dark); border-color: var(--accent-dark);
+  box-shadow: 0 8px 28px rgba(200,85,106,0.42);
   transform: translateY(-2px);
 }
 
-.btn-primary:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(255, 107, 53, 0.3);
-}
-
-/* Secondary / Outline Button */
+/* Secondary */
 .btn-secondary {
-  background: transparent;
-  color: var(--color-accent);
-  border-color: var(--color-accent);
+  background: transparent; color: var(--text);
+  border-color: rgba(28,15,15,0.22);
 }
-
 .btn-secondary:hover {
-  background: var(--color-accent);
-  color: #fff;
+  background: var(--text); color: #fff;
+  border-color: var(--text);
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(255, 107, 53, 0.35);
 }
 
-/* Ghost Button (light outline for dark backgrounds) */
+/* Outline rose */
+.btn-rose {
+  background: transparent; color: var(--accent);
+  border-color: var(--accent);
+}
+.btn-rose:hover {
+  background: var(--accent); color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Ghost (fond clair) */
 .btn-ghost {
-  background: transparent;
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.6);
+  background: var(--surface-2); color: var(--text);
+  border-color: transparent;
 }
-
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: #fff;
-  transform: translateY(-2px);
+  background: var(--border);
+  transform: translateY(-1px);
 }
 
-/* Dark Button */
+/* Dark */
 .btn-dark {
-  background: var(--color-dark);
-  color: #fff;
-  border-color: var(--color-dark);
+  background: var(--text); color: #fff; border-color: var(--text);
 }
-
 .btn-dark:hover {
-  background: var(--color-text);
+  background: #3d1f1f;
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 
 /* Sizes */
-.btn--sm { padding: 9px 20px; font-size: 0.78rem; }
-.btn--lg { padding: 18px 48px; font-size: 1rem;   }
-
-/* Full width */
+.btn--sm { padding: 9px 20px; font-size: 0.68rem; }
+.btn--lg { padding: 16px 40px; font-size: 0.82rem; }
 .btn--block { width: 100%; }
 
+/* Icon pill */
+.btn--pill { border-radius: var(--radius-pill); }
+
 /* Disabled */
-.btn:disabled,
-.btn--disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-  transform: none !important;
-  box-shadow: none !important;
-}
+.btn:disabled { opacity: 0.4; pointer-events: none; }
