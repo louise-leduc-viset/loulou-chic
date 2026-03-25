@@ -1,151 +1,157 @@
-/* ===== CARD COMPONENT ===== */
-
+/* ── CARD ── */
 .card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-  border-color: rgba(255, 107, 53, 0.3);
+  box-shadow: 0 16px 48px rgba(200,85,106,0.1);
+  border-color: var(--accent-light);
 }
 
-.card__image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
+/* ── Carte produit ── */
+.card--product { cursor: pointer; }
+
+.card--product .card__img-wrap {
+  position: relative; overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: var(--surface-2);
+}
+.card--product .card__img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top;
+  transition: transform 0.5s ease;
+}
+.card--product:hover .card__img { transform: scale(1.06); }
+
+/* Placeholder produit */
+.card__img-placeholder {
+  width: 100%; height: 100%;
+  background: linear-gradient(160deg, #f9eef0 0%, #f2c4cd 50%, #e8a0b0 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3rem;
+}
+
+/* Badges sur image */
+.card__badges {
+  position: absolute; top: 14px; left: 14px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+
+/* Bouton wishlist */
+.card__wish {
+  position: absolute; top: 14px; right: 14px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: white; border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; color: var(--muted);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: color 0.2s, transform 0.2s;
+}
+.card__wish:hover { color: var(--accent); transform: scale(1.12); }
+.card__wish.active { color: var(--accent); }
+
+/* CTA rapide */
+.card__quick {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: var(--text);
+  color: #fff;
+  font-family: var(--font-body); font-size: 0.72rem;
+  font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 14px; text-align: center; cursor: pointer;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  border: none;
+}
+.card--product:hover .card__quick { transform: translateY(0); }
+
+.card__body { padding: 18px 18px 20px; }
+
+.card__brand {
+  font-size: 0.65rem; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 6px;
+}
+.card__name {
+  font-family: var(--font-display);
+  font-size: 1.05rem; font-weight: 700;
+  color: var(--text); line-height: 1.3; margin-bottom: 10px;
+}
+.card__price {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-display);
+}
+.card__price-current { font-size: 1.15rem; font-weight: 700; color: var(--text); }
+.card__price-old     { font-size: 0.9rem; color: var(--muted); text-decoration: line-through; }
+.card__price-off     { font-size: 0.7rem; color: var(--accent); font-weight: 600; }
+
+/* Couleurs dispo */
+.card__colors {
+  display: flex; gap: 6px; margin-top: 12px;
+}
+.card__color {
+  width: 16px; height: 16px; border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
+  cursor: pointer; transition: transform 0.2s;
+}
+.card__color:hover { transform: scale(1.25); }
+
+/* ── Carte catégorie ── */
+.card--category {
+  position: relative; overflow: hidden;
+  border-radius: var(--radius-md);
+  aspect-ratio: 1 / 1.2;
+  cursor: pointer;
+}
+.card--category .card__bg {
+  width: 100%; height: 100%;
   object-fit: cover;
-  display: block;
+  transition: transform 0.5s ease;
+}
+.card--category:hover .card__bg { transform: scale(1.07); }
+.card--category::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(28,15,15,0.65) 0%, transparent 55%);
+}
+.card--category .card__label {
+  position: absolute; bottom: 24px; left: 24px; right: 24px;
+  z-index: 2; color: white;
+}
+.card--category .card__label-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem; font-weight: 700; font-style: italic;
+}
+.card--category .card__label-count {
+  font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.12em; opacity: 0.75; margin-top: 4px;
 }
 
-.card__body {
+/* Placeholder catégorie */
+.card--category .card__bg-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3.5rem;
+}
+
+/* ── Carte avis ── */
+.card--review {
   padding: 28px;
 }
-
-.card__tag {
-  display: inline-block;
-  font-family: var(--font-display);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  margin-bottom: 12px;
+.card--review .card__stars { color: var(--gold); font-size: 0.85rem; margin-bottom: 14px; }
+.card--review .card__quote {
+  font-family: var(--font-display); font-style: italic;
+  font-size: 1rem; line-height: 1.65;
+  color: var(--text); margin-bottom: 20px;
 }
-
-.card__title {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--color-text);
-  line-height: 1.3;
-  margin: 0 0 12px;
+.card--review .card__reviewer {
+  display: flex; align-items: center; gap: 12px;
+  padding-top: 16px; border-top: 1px solid var(--border);
 }
+.card--review .card__reviewer-name { font-weight: 600; font-size: 0.88rem; }
+.card--review .card__reviewer-date { font-size: 0.72rem; color: var(--muted); margin-top: 1px; }
 
-.card__text {
-  font-size: 0.9rem;
-  color: var(--color-muted);
-  line-height: 1.65;
-  margin: 0 0 24px;
-}
-
-.card__footer {
-  padding: 16px 28px;
-  border-top: 1px solid var(--color-border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Feature card variant */
-.card--feature {
-  padding: 40px 32px;
-  text-align: center;
-}
-
-.card--feature .card__icon {
-  width: 56px;
-  height: 56px;
-  background: rgba(255, 107, 53, 0.1);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px;
-  font-size: 1.5rem;
-  color: var(--color-accent);
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.card--feature:hover .card__icon {
-  background: var(--color-accent);
-  color: #fff;
-  transform: scale(1.1) rotate(-5deg);
-}
-
-/* Pricing card variant */
-.card--pricing {
-  text-align: center;
-  padding: 0;
-}
-
-.card--pricing.card--featured {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 1px var(--color-accent), 0 20px 60px rgba(255,107,53,0.2);
-}
-
-.card--pricing .card__plan-header {
-  padding: 32px 32px 24px;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.card--pricing .card__price {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  font-weight: 900;
-  color: var(--color-text);
-  line-height: 1;
-}
-
-.card--pricing .card__price sup {
-  font-size: 1.2rem;
-  font-weight: 700;
-  vertical-align: super;
-}
-
-.card--pricing .card__price-period {
-  font-size: 0.8rem;
-  color: var(--color-muted);
-  margin-top: 4px;
-}
-
-.card--pricing .card__features {
-  padding: 24px 32px;
-  list-style: none;
-  margin: 0;
-  text-align: left;
-}
-
-.card--pricing .card__features li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 0;
-  font-size: 0.9rem;
-  color: var(--color-muted);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.card--pricing .card__features li::before {
-  content: '✓';
-  color: var(--color-accent);
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.card--pricing .card__cta {
-  padding: 0 32px 32px;
-}
