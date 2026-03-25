@@ -1,24 +1,264 @@
-Livraison offerte dès 80 € d'achat · Code BIENVENUE : -15% sur votre 1ère commande · Retours gratuits 30 jours
-Chic&Choc
-Collections
-Nouveautés
-Nos stylistes
-Avis
-🔍
-♡
-🛍
-Mon compte
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chic & Choc — Mode féminine</title>
 
-Collection Printemps — Été 2026
+  <!-- Feuille de style principale -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-L'élégance,
-à votre mesure.
-Chic&Choc sélectionne pour vous des vêtements qui allient raffinement et modernité — pour une garde-robe qui vous ressemble, en toutes circonstances.
+<body>
 
-Découvrir la collection Voir les catégories →
-+800
-Références disponibles
-15 ans
-D'expertise mode
-4.8★
-Avis clients
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container navbar__inner">
+      <a href="#" class="navbar__brand">
+        <span class="navbar__logo-circle">C</span>
+        <span class="navbar__brand-text">Chic & Choc</span>
+      </a>
+
+      <nav class="navbar__nav">
+        <a href="#nouveautes" class="navbar__link">Nouveautés</a>
+        <a href="#collection" class="navbar__link">Collection</a>
+        <a href="#valeurs" class="navbar__link">Valeurs</a>
+        <a href="#avis" class="navbar__link">Avis</a>
+      </nav>
+
+      <div class="navbar__actions">
+        <button class="btn btn--ghost">Se connecter</button>
+        <button class="btn btn--primary">Panier</button>
+      </div>
+
+      <button class="navbar__toggle">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO / BANNIÈRE -->
+  <section class="banner" id="top">
+    <div class="container banner__grid">
+
+      <div class="banner__content">
+        <div class="badge badge--rose">Nouvelle collection</div>
+
+        <h1 class="banner__title">L’élégance au quotidien</h1>
+
+        <p class="banner__text">
+          Des pièces intemporelles, pensées pour sublimer toutes les silhouettes.
+        </p>
+
+        <div class="banner__cta">
+          <a href="#collection" class="btn btn--primary">Découvrir</a>
+          <a href="#valeurs" class="btn btn--ghost">Nos valeurs</a>
+        </div>
+
+        <div class="banner__meta">
+          <div class="avatar-group">
+            <div class="avatar">
+              <img src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="">
+            </div>
+            <div class="avatar">
+              <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="">
+            </div>
+            <div class="avatar avatar--more">+1200</div>
+          </div>
+
+          <p class="banner__note">
+            <span class="text-accent">4.8/5</span> basé sur 1200 avis
+          </p>
+        </div>
+      </div>
+
+      <div class="banner__visual">
+        <div class="banner__image-main">
+          <img src="https://images.pexels.com/photos/6311579/pexels-photo-6311579.jpeg" alt="">
+        </div>
+
+        <div class="banner__card">
+          <p class="banner__card-title">Matières responsables</p>
+          <p class="banner__card-text">Coton bio, lin européen, viscose certifiée.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION NOUVEAUTÉS -->
+  <section class="section" id="nouveautes">
+    <div class="container">
+
+      <div class="section__header">
+        <div class="section__eyebrow">Nouveautés</div>
+        <h2 class="section__title">Les pièces du moment</h2>
+        <p class="section__sub">Découvrez nos dernières créations.</p>
+      </div>
+
+      <div class="grid-3">
+
+        <article class="card">
+          <div class="card__image">
+            <img src="https://images.pexels.com/photos/6311577/pexels-photo-6311577.jpeg" alt="">
+            <span class="card__tag">Best-seller</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Robe “Léa”</h3>
+            <p class="card__text">Une coupe flatteuse et féminine.</p>
+            <div class="card__meta">
+              <span class="card__price">89€</span>
+              <button class="btn btn--text">Ajouter</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__image">
+            <img src="https://images.pexels.com/photos/6311573/pexels-photo-6311573.jpeg" alt="">
+            <span class="card__tag card__tag--gold">Nouveau</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Tailleur “Alba”</h3>
+            <p class="card__text">Élégant et structuré.</p>
+            <div class="card__meta">
+              <span class="card__price">149€</span>
+              <button class="btn btn--text">Ajouter</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__image">
+            <img src="https://images.pexels.com/photos/6311580/pexels-photo-6311580.jpeg" alt="">
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Chemise “June”</h3>
+            <p class="card__text">Légère et respirante.</p>
+            <div class="card__meta">
+              <span class="card__price">69€</span>
+              <button class="btn btn--text">Ajouter</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SECTION COLLECTION -->
+  <section class="section" id="collection">
+    <div class="container">
+
+      <div class="section__header">
+        <div class="section__eyebrow">Collection</div>
+        <h2 class="section__title">Des looks prêts à porter</h2>
+        <p class="section__sub">Compose ta silhouette idéale.</p>
+      </div>
+
+      <div class="grid-4">
+        <article class="card card--minimal">
+          <h3 class="card__title">Capsule bureau</h3>
+          <p class="card__text">Blazers, pantalons, chemisiers.</p>
+        </article>
+
+        <article class="card card--minimal">
+          <h3 class="card__title">Week-end chic</h3>
+          <p class="card__text">Robes longues, mailles douces.</p>
+        </article>
+
+        <article class="card card--minimal">
+          <h3 class="card__title">Soirées</h3>
+          <p class="card__text">Coupes satinées, détails drapés.</p>
+        </article>
+
+        <article class="card card--minimal">
+          <h3 class="card__title">Loungewear</h3>
+          <p class="card__text">Confort & élégance.</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SECTION VALEURS -->
+  <section class="section" id="valeurs">
+    <div class="container grid-2">
+
+      <div>
+        <div class="section__eyebrow">Nos valeurs</div>
+        <h2 class="section__title">Une mode responsable</h2>
+
+        <p>Nous privilégions des matières certifiées et une production raisonnée.</p>
+
+        <ul class="values-list">
+          <li><span>•</span> 80% fabriqué en Europe</li>
+          <li><span>•</span> Traçabilité complète</li>
+          <li><span>•</span> Ateliers à taille humaine</li>
+        </ul>
+      </div>
+
+      <div class="values__card">
+        <div class="badge badge--gold">Engagement</div>
+        <p class="italic">
+          “Je voulais des vêtements élégants et responsables.”
+        </p>
+        <p class="values__author">— Clara, fondatrice</p>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SECTION AVIS -->
+  <section class="section" id="avis">
+    <div class="container">
+
+      <div class="section__header">
+        <div class="section__eyebrow">Avis clientes</div>
+        <h2 class="section__title">Elles témoignent</h2>
+      </div>
+
+      <div class="grid-3">
+
+        <article class="card card--quote">
+          <p class="card__quote">“Les coupes sont parfaites.”</p>
+          <p class="card__author">— Sarah</p>
+        </article>
+
+        <article class="card card--quote">
+          <p class="card__quote">“Enfin une marque qui me correspond.”</p>
+          <p class="card__author">— Inès</p>
+        </article>
+
+        <article class="card card--quote">
+          <p class="card__quote">“Les vêtements durent vraiment longtemps.”</p>
+          <p class="card__author">— Marion</p>
+        </article>
+
+      </div>
+
+      <div class="flex-center" style="margin-top:40px;">
+        <a href="#top" class="btn btn--ghost">Haut de page</a>
+        <button class="btn btn--primary">Voir plus</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__brand">Chic & Choc</p>
+      <p class="footer__text">© 2026 — Mode féminine responsable</p>
+      <p class="footer__text">Mentions légales · CGV · Confidentialité</p>
+    </div>
+  </footer>
+
+</body>
+</html>
